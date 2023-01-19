@@ -6,6 +6,20 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "3.18.1"
+  name = "main-vpc"
+  cidr = var.vpc_cidr_block
+
+  azs             = data.aws_availability_zones.available.names
+  private_subnets = []
+  public_subnets  = slice(var.public_subnet_cidr_blocks, 0, var.public_subnet_count)
+
+  enable_nat_gateway = false
+}
+
+
 resource "aws_security_group" "my-sg" {
   vpc_id = module.vpc.vpc_id
   name   = join("_", ["sg", module.vpc.vpc_id])
@@ -39,7 +53,7 @@ resource "tls_private_key" "example" {
 }
 
 resource "aws_key_pair" "generated_key" {
-  key_name   = "default_key2"
+  key_name   = "default_key3"
   public_key = tls_private_key.example.public_key_openssh
 }
 
