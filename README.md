@@ -1,6 +1,7 @@
 # Prerequisites 
 1. Git
-2. AWS CLI
+2. Terraform
+3. AWS CLI
 
 # Instructions
 1. Git clone this repo
