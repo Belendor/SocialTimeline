@@ -26,6 +26,8 @@ pipeline {
                 sh '''
                     docker --version
                     docker compose version
+                    cd client/
+                    docker build .
                 '''
             }
         }
