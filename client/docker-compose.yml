@@ -1,7 +1,6 @@
 version: '3'
 services:
-  web: 
-    image: belendor/multi-client
+  web:
     build:
       context: .
       dockerfile: Dockerfile
