@@ -20,6 +20,25 @@ pipeline {
                 }
             }
         }
+
+        stage('Compose') {
+             steps {
+                sh '''
+                    cd SocialTimeline/
+                    cd client/
+                    docker compose up -d
+                '''
+            }
+        }
+
+        stage('ps') {
+            steps {
+                sh '''
+                    docker compose ps
+                '''
+            }
+        }
+
         stage('Test') {
              steps {
                 sh '''
