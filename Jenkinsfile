@@ -24,8 +24,8 @@ pipeline {
         stage('Compose') {
              steps {
                 sh '''
-                    cd client/
-                    docker compose up -d
+                    docker --version
+                    docker compose version
                 '''
             }
         }
@@ -38,16 +38,16 @@ pipeline {
         //     }
         // }
 
-        stage('Test') {
-             steps {
-                sh '''
-                    aws --version
-                    aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && \
-                    aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && \
-                    aws configure set region eu-central-1
-                    aws ec2 describe-instances
-                '''
-            }
-        }
+        // stage('Test') {
+        //      steps {
+        //         sh '''
+        //             aws --version
+        //             aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && \
+        //             aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && \
+        //             aws configure set region eu-central-1
+        //             aws ec2 describe-instances
+        //         '''
+        //     }
+        // }
     }
 }
