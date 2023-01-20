@@ -23,21 +23,24 @@ pipeline {
 
         stage('Compose') {
              steps {
+                // sh '''
+                //     cd SocialTimeline/
+                //     cd client/
+                //     docker compose up -d
+                // '''
                 sh '''
-                    cd SocialTimeline/
-                    cd client/
-                    docker compose up -d
+                    ls
                 '''
             }
         }
 
-        stage('ps') {
-            steps {
-                sh '''
-                    docker compose ps
-                '''
-            }
-        }
+        // stage('ps') {
+        //     steps {
+        //         sh '''
+        //             docker compose ps
+        //         '''
+        //     }
+        // }
 
         stage('Test') {
              steps {
