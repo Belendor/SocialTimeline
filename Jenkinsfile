@@ -23,13 +23,9 @@ pipeline {
 
         stage('Compose') {
              steps {
-                // sh '''
-                //     cd SocialTimeline/
-                //     cd client/
-                //     docker compose up -d
-                // '''
                 sh '''
-                    ls
+                    cd client/
+                    docker compose up -d
                 '''
             }
         }
