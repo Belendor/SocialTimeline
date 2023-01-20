@@ -1,6 +1,7 @@
 FROM node
+EXPOSE 3000
 WORKDIR '/app'
-COPY ./package.json ./
+COPY package.json .
 RUN npm install
 COPY . .
-CMD ['npm', 'run', 'start']
+RUN npm run build

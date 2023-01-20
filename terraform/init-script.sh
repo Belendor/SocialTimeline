@@ -9,4 +9,4 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 # Start Jenkins
-sudo docker run -d -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk11
+docker run -d  -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home  belendor/jenkins
