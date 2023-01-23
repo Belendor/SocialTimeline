@@ -9,3 +9,4 @@
 3. terraform init
 4. terraform apply
 5. Go to Jenkins EC2 public IP. `<IP>:8080`. Password can be found running   `sudo docker logs <container id>` 
+6. chmod 666 /var/run/docker.sock
