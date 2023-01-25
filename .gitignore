@@ -7,3 +7,4 @@ server/.flaskenv
 server/.venv
 server/__pycache__
 terraform/.terraform
+terraform/terraform.tfstate
