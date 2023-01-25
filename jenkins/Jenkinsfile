@@ -24,10 +24,8 @@ pipeline {
         stage('Compose') {
              steps {
                 sh '''
-                    docker --version
-                    docker compose version
-                    cd client/
-                    docker build .
+                    sudo docker --version
+                    sudo docker compose version
                 '''
             }
         }
