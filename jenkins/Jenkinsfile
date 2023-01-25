@@ -24,8 +24,9 @@ pipeline {
         stage('Compose') {
              steps {
                 sh '''
-                    sudo docker --version
-                    sudo docker compose version
+                    sudo -i
+                    docker --version
+                    docker compose version
                 '''
             }
         }
