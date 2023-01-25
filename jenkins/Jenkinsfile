@@ -30,14 +30,6 @@ pipeline {
             }
         }
 
-        // stage('ps') {
-        //     steps {
-        //         sh '''
-        //             docker compose ps
-        //         '''
-        //     }
-        // }
-
         // stage('Test') {
         //      steps {
         //         sh '''
