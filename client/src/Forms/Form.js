@@ -49,7 +49,7 @@ export default class Form extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
+          Name of post:
           <input
             type="text"
             value={this.state.value}
