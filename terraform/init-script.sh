@@ -8,6 +8,14 @@ sudo sed -i 's/debian/ubuntu/g' /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+#Increase swap file
+fallocate -l 4G /swapfile
+chmod 600 /swapfile
+mkswap  /swapfile
+swapon /swapfile
+swapon  --show
+free -h
+
 #Java
 sudo apt update
 sudo apt install openjdk-11-jre -y

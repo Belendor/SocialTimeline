@@ -26,6 +26,7 @@ pipeline {
                 sh '''
                     sudo docker --version
                     sudo docker compose version
+                    sudo docker compose up --build
                 '''
             }
         }
