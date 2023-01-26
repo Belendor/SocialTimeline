@@ -13,7 +13,7 @@ variable "vpc_cidr_block" {
 variable "public_subnet_count" {
   description = "Number of public subnets."
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "public_subnet_cidr_blocks" {
