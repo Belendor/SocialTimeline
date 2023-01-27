@@ -25,7 +25,7 @@ const styles = {
 const Header = () => {
   return (
     <header style={styles.header}>
-      <h1 style={styles.title}>My Website</h1>
+      <h1 style={styles.title}>Artur Website</h1>
       <nav style={styles.nav}>
         <a href="#home" style={styles.navItem}>
           Home
